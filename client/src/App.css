@@ -1,0 +1,186 @@
+/* App.css - Riya Style Vibes (Bold + GenZ + Playful) */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.app-container {
+  max-width: 700px;
+  width: 92%;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+ 
+  animation: fadeIn 0.8s ease-in-out;
+  color: #fff;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f5f5f5;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.file-label {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+  font-size: 1rem;
+}
+
+.file-label:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(37, 117, 252, 0.7);
+}
+
+.file-label input {
+  display: none;
+}
+
+button {
+  padding: 0.7rem 1.2rem;
+  background: linear-gradient(90deg, #ff512f, #dd2476);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 220px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #ff6a3d, #ff2f80);
+}
+
+button:disabled {
+  background: #9c9c9c;
+  cursor: not-allowed;
+}
+
+.upload-status {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ffd9f0;
+  margin-top: 0.3rem;
+}
+
+.query-box {
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 0.9rem;
+  font-size: 1rem;
+  margin: 1rem 0;
+  resize: vertical;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  min-height: 90px;
+  transition: box-shadow 0.3s ease;
+}
+
+.query-box:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 122, 255, 0.8);
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.clear-btn {
+  background: linear-gradient(90deg, #ff4e50, #f9d423);
+  color: #000;
+  font-weight: bold;
+}
+
+.clear-btn:hover {
+  background: linear-gradient(90deg, #f86a6a, #ffd966);
+}
+
+.response-section {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.response-box {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #f5f5f5;
+  min-height: 60px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .file-label {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .query-box {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+
+  .app-container {
+    padding: 1rem;
+  }
+}
