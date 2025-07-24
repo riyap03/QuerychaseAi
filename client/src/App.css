@@ -1,62 +1,69 @@
-/* App.css - Riya Style Vibes (Enhanced & Fixed Layout) */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Outfit:wght@400;600;700&display=swap');
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  font-family: 'Outfit', sans-serif;
+  background: radial-gradient(circle at top left, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
+  color: #333;
+  background-attachment: fixed;
 }
 
 .app-container {
   max-width: 700px;
   width: 92%;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 20px;
-  padding: 1.5rem;
-  margin: 1rem auto;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.6);
+ 
+  border-radius: 25px;
+  padding: 2.2rem;
+  margin: 2rem auto;
+  box-shadow: 0 12px 40px rgba(255, 122, 122, 0.3);
   animation: fadeIn 0.8s ease-in-out;
-  color: #fff;
-  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .title {
+  font-family: 'Pacifico', cursive;
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.6rem;
   font-weight: 700;
-  color: #f5f5f5;
-  margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(90deg, #ff758c, #ff7eb3, #ffcc70);
+  
+  color :hsla(0, 0%, 100%, 0.837);
+  margin-bottom: 1.8rem;
 }
 
 .upload-section {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
   align-items: center;
   margin-bottom: 1.5rem;
 }
 
 .file-label {
-  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  background: linear-gradient(135deg, #fb7ba2, #fce043);
   color: #fff;
-  padding: 0.8rem 1.2rem;
-  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
   cursor: pointer;
   text-align: center;
+  font-weight: bold;
   width: 100%;
-  max-width: 280px;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s;
-  font-size: 1rem;
+  max-width: 300px;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 12px rgba(255, 161, 161, 0.4);
 }
 
 .file-label:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 10px rgba(37, 117, 252, 0.7);
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 0 18px rgba(255, 173, 173, 0.6);
 }
 
 .file-label input {
@@ -64,91 +71,98 @@ body {
 }
 
 button {
-  padding: 0.7rem 1.2rem;
-  background: linear-gradient(90deg, #ff512f, #dd2476);
-  color: white;
-  font-weight: 600;
+  padding: 0.9rem 1.3rem;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  color: #fff;
+  font-weight: 700;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s, background 0.3s;
+  transition: all 0.25s ease;
   font-size: 1rem;
   width: 100%;
-  max-width: 220px;
+  max-width: 230px;
+  box-shadow: 0 6px 15px rgba(255, 144, 144, 0.25);
 }
 
 button:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(90deg, #ff6a3d, #ff2f80);
+  transform: translateY(-4px) scale(1.03);
+  background: linear-gradient(135deg, #fddb92, #d1fdff);
+  color: #000;
 }
 
 button:disabled {
-  background: #9c9c9c;
+  background: #e0e0e0;
   cursor: not-allowed;
+  color: #777;
 }
 
 .upload-status {
   text-align: center;
-  font-size: 0.9rem;
-  color: #ffd9f0;
+  font-size: 0.95rem;
+  color: #e91e63;
   margin-top: 0.3rem;
+  font-style: italic;
 }
 
-.query-box {
+.query-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  border-radius: 10px;
+  margin: 1rem 0;
+}
+.query-box {
+  width: 90%;
+  max-width: 500px;
+  border-radius: 14px;
   border: none;
   padding: 1rem;
   font-size: 1rem;
-  margin: 1rem 0;
-  resize: vertical;
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  min-height: 90px;
-  max-width: 100%;
-  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.8);
+  color: #444;
+  min-height: 100px;
   transition: box-shadow 0.3s ease;
+  box-shadow: inset 0 0 5px rgba(255, 100, 150, 0.15);
 }
 
-.query-box:focus {
-  outline: none;
-  box-shadow: 0 0 8px rgba(255, 122, 255, 0.8);
-}
 
 .button-group {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
   align-items: center;
 }
 
 .clear-btn {
-  background: linear-gradient(90deg, #ff4e50, #f9d423);
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
   color: #000;
   font-weight: bold;
 }
 
 .clear-btn:hover {
-  background: linear-gradient(90deg, #f86a6a, #ffd966);
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
 }
 
 .response-section {
-  margin-top: 1rem;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .response-box {
-  background: rgba(0, 0, 0, 0.2);
-  padding: 0.8rem;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  color: #f5f5f5;
-  min-height: 60px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #2b2b2b;
+  min-height: 70px;
   white-space: pre-wrap;
   word-wrap: break-word;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
 }
 
 @keyframes fadeIn {
@@ -162,28 +176,28 @@ button:disabled {
   }
 }
 
-/* Mobile Responsive */
+/* Mobile Friendly */
 @media (max-width: 480px) {
   .title {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 
   .file-label {
-    padding: 0.7rem;
+    padding: 0.8rem;
     font-size: 0.95rem;
   }
 
   button {
-    font-size: 0.9rem;
-    padding: 0.6rem;
+    font-size: 0.95rem;
+    padding: 0.7rem;
   }
 
   .query-box {
     font-size: 0.9rem;
-    padding: 0.7rem;
+    padding: 0.9rem;
   }
 
   .app-container {
-    padding: 1rem;
+    padding: 1.2rem;
   }
 }

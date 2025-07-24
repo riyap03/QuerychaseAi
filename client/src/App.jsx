@@ -44,26 +44,28 @@ function App() {
   };
 
   const handleQuery = async () => {
-    if (!query.trim()) {
-      setResponse("⚠️ Please enter a question!");
-      return;
-    }
+  if (!query.trim()) {
+    setResponse("⚠️ Please enter a question!");
+    return;
+  }
 
-    try {
-      setLoading(true);
-      setResponse("Thinking...");
-      const res = await axios.post("http://localhost:5000/api/ai/query", {
-        prompt: `${documentText}\n\nQuestion: ${query}`,
-      });
+  try {
+    setLoading(true);
+    setResponse("Thinking...");
+    const res = await axios.post("http://localhost:5000/api/ai/query", {
+      prompt: query,          // Send only the user's question
+      documentText: documentText // Send the uploaded document text separately
+    });
 
-      setResponse(res.data.answer || "No response.");
-    } catch (error) {
-      console.error("Query error:", error);
-      setResponse("❌ Error: Failed to fetch AI response.");
-    } finally {
-      setLoading(false);
-    }
-  };
+    setResponse(res.data.answer || "No response.");
+  } catch (error) {
+    console.error("Query error:", error);
+    setResponse("❌ Error: Failed to fetch AI response.");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   const clearChat = () => {
     setResponse("");
@@ -85,13 +87,16 @@ function App() {
       </div>
       <p className="upload-status">{uploadStatus}</p>
 
-    <textarea
-  className="query-box"
-  placeholder="Ask your question..."
-  value={query}
-  onChange={(e) => setQuery(e.target.value)}
-  rows="4"
-/>
+    <div className="query-section">
+  <textarea
+    className="query-box"
+    placeholder="Ask your question..."
+    value={query}
+    onChange={(e) => setQuery(e.target.value)}
+    rows="4"
+  />
+</div>
+
 
       <div className="button-group">
         <button onClick={handleQuery} disabled={loading}>

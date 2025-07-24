@@ -70,18 +70,37 @@ app.post("/upload", upload.single("file"), async (req, res) => {
 // AI Query Endpoint
 app.post("/api/ai/query", async (req, res) => {
   try {
-    const { prompt } = req.body;
+    const { prompt, documentText } = req.body;
     if (!prompt) return res.status(400).json({ error: "Prompt is required." });
 
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-    const result = await model.generateContent(prompt);
-    const answer = result.response.text() || "No response.";
 
+    const finalPrompt = `
+You are a policy assistant. Use the following document as context. Give to the point concise answers ,like "Yes, knee surgery is covered under the policy."
+
+
+Document:
+${documentText || "No document provided."}
+
+Question:
+${prompt}
+
+Answer concisely and to the point.
+    `;
+
+    const result = await model.generateContent({
+      contents: [{ role: "user", parts: [{ text: finalPrompt }] }],
+      generationConfig: { maxOutputTokens: 60, temperature: 0.2 }
+    });
+
+    const answer = result.response.text() || "No relevant answer found.";
     res.json({ answer });
   } catch (error) {
     console.error("Gemini API Error:", error);
     res.status(500).json({ error: "Gemini API request failed." });
   }
 });
+
+
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
